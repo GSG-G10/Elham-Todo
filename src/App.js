@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { Typography,Layout } from 'antd';
+import InputToDo from './components/Input';
+import { TodoList } from './components';
 import './App.css';
+import 'antd/dist/antd.css';
+  const { Title } = Typography;
+  const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className="App">
+      <Header>
+       <Title level={2}>TODO</Title>
+      </Header>
+      <Content>
+        <InputToDo />
+        <TodoList />
+      </Content>
+      <Footer>copyright@elhamfadel2021</Footer>
+    </Layout>
   );
 }
 
