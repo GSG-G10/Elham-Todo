@@ -1,8 +1,14 @@
 .App {
   text-align: center;
 }
-.site-page-header{
-  background-color: #f5f5f5;
-  color:#fff
+.ant-layout{
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
 }
+#header{
+   background: #001529c9;
+   background:url('./image/todo.jpg') no-repeat center center;
+}
+
 

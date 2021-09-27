@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Typography,Layout } from 'antd';
 import InputToDo from './components/Input';
 import { TodoList } from './components';
@@ -7,15 +8,19 @@ import 'antd/dist/antd.css';
   const { Header, Content, Footer } = Layout;
 
 function App() {
+  const [listTodo, setTodo] = useState([])
+  console.log(listTodo)
   return (
-    <Layout className="App">
-      <Header>
+    <Layout>
+      <div className="App">
+      <Header id="header">
        <Title level={2}>TODO</Title>
       </Header>
       <Content>
-        <InputToDo />
-        <TodoList />
+        <InputToDo addTaskToList={setTodo} />
+        <TodoList list={listTodo} />
       </Content>
+      </div>
       <Footer>copyright@elhamfadel2021</Footer>
     </Layout>
   );

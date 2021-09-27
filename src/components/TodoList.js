@@ -1,29 +1,17 @@
 import React from 'react'
 import { List,Checkbox ,Typography} from 'antd';
+import "./styles.css"
 const { Title } = Typography;
-const data = [
-  {
-    title: 'Ant Design Title 1',
-  },
-  {
-    title: 'Ant Design Title 2',
-  },
-  {
-    title: 'Ant Design Title 3',
-  },
-  {
-    title: 'Ant Design Title 4',
-  },
-];
-function TodoList() {
+
+function TodoList({list}) {
     return (
             <List
               itemLayout="horizontal"
-              dataSource={data}
+              dataSource={list}
               renderItem={item => (
-            <List.Item>
-             <Checkbox >
-             <Title level={4}>{item.title}</Title>
+            <List.Item id="list">
+             <Checkbox checked={item.done}>
+             <Title level={4} style={item.done&&{textDecoration: "line-through"}}>{item.text}</Title>
              </Checkbox>
             </List.Item>
 
@@ -31,5 +19,4 @@ function TodoList() {
          />
     )
 }
-
 export default TodoList
