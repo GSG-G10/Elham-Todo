@@ -9,7 +9,6 @@ import 'antd/dist/antd.css';
 
 function App() {
   const [listTodo, setTodo] = useState([])
-  console.log(listTodo)
   return (
     <Layout>
       <div className="App">
@@ -18,7 +17,7 @@ function App() {
       </Header>
       <Content>
         <InputToDo addTaskToList={setTodo} />
-        <TodoList list={listTodo} />
+        <TodoList list={listTodo} setCompleted={setTodo} />
       </Content>
       </div>
       <Footer>copyright@elhamfadel2021</Footer>
